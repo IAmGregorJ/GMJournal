@@ -1,0 +1,137 @@
+﻿<Window x:Class="GMJournalWPF.Udredning"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GMJournalWPF"
+        mc:Ignorable="d"
+        Title="GMJournal - Udredning" Height="500" Width="800" Loaded="Window_Loaded" Closed="Window_Closed">
+        <Grid Background="#FF383C45">
+        <DataGrid x:Name="udredningDataGrid" HorizontalGridLinesBrush="#FF00ADB4" Background="White" HorizontalAlignment="Left" Height="50" Margin="35,35,0,0" VerticalAlignment="Top" Width="300" SelectionChanged="udredningDataGrid_SelectionChanged"/>
+        <GroupBox Foreground="#FF00ADB4" Background="#FF383C45" Header="Udredning og Samlet Faglig Vurdering" HorizontalAlignment="Left" Height="100" Margin="10,0,0,0" VerticalAlignment="Top" Width="348" FontSize="18" FontWeight="Bold"/>
+        <Label Content="CPR" Foreground="#FF00ADB4" HorizontalAlignment="Left" Margin="20,40,0,0" Height="25" VerticalAlignment="Top"/>
+        <TextBox x:Name="cpr_txtbx" Margin="75,40,0,0" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" IsEnabled="False"/>
+        <Label Content="Date" Foreground="#FF00ADB4" HorizontalAlignment="Left" Margin="20,65,0,0" Height="25" VerticalAlignment="Top"/>
+        <DatePicker Name="date_dtpk" Margin="75,65,0,0" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <Button x:Name="gemUdredningen_btn" Content="Gem Udredningen" HorizontalAlignment="right" Margin="0,15,10,0" VerticalAlignment="Top" Width="150" IsEnabled="False" Click="gemUdredningen_btn_Click"/>
+        <Label Content="Samlet Faglig Vurdering" Foreground="#FF00ADB4" HorizontalAlignment="Right" Margin="0,50,160,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="samletFagligVurdering_combobx" HorizontalAlignment="Right" Width="150" Margin="0,50,10,0" VerticalAlignment="Top">
+            <ComboBoxItem Content="A - Intet problem (ingen, fraværende, ubetydelig)"/>
+            <ComboBoxItem Content="B - Let problem (en smule, lidt)"/>
+            <ComboBoxItem Content="C - Moderat problem (middel, noget)"/>
+            <ComboBoxItem Content="D - Svært problem (omfattende, meget)"/>
+            <ComboBoxItem Content="E - Fuldstændigt problem (totalt, kan ikke)"/>
+        </ComboBox>
+        <Label Content="Målgruppe" Foreground="#FF00ADB4" HorizontalAlignment="Right" Margin="0,80,160,0" VerticalAlignment="Top" />
+        <ComboBox x:Name="maalgruppe_combobx" HorizontalAlignment="Right" Width="150" Margin="0,80,10,0" VerticalAlignment="Top">
+                <ComboBoxItem Content="1.1.1 Mobilitetsnedsættelse" />
+                <ComboBoxItem Content="1.1.2 Synsnedsættelse " />
+                <ComboBoxItem Content="1.1.3 Hørenedsættelse" />
+                <ComboBoxItem Content="1.1.4 Kommunikationsnedsættelse" />
+                <ComboBoxItem Content="1.1.5 Døvblindhed" />
+                <ComboBoxItem Content="1.2.1.1 Demens" />
+                <ComboBoxItem Content="1.2.1.2.1 Medfødt hjerneskade" />
+                <ComboBoxItem Content="1.2.1.2.2 Erhvervet hjerneskade" />
+                <ComboBoxItem Content="1.2.1.3.1 Opmærksomhedsforstyrrelse" />
+                <ComboBoxItem Content="1.2.1.3.2 Autismespektrum" />
+                <ComboBoxItem Content="1.2.1.4 Udviklingshæmning" />
+                <ComboBoxItem Content="1.2.2.1 Angst" />
+                <ComboBoxItem Content="1.2.2.2 Depression" />
+                <ComboBoxItem Content="1.2.2.3 Forandret virkelighedsopfattelse" />
+                <ComboBoxItem Content="1.2.2.4 Personligheds-forstyrrelse" />
+                <ComboBoxItem Content="1.2.2.5 Spiseforstyrrelse" />
+                <ComboBoxItem Content="1.2.2.6 Tilknytningsforstyrrelse" />
+                <ComboBoxItem Content="1.2.2.7 Stressbelastning" />
+                <ComboBoxItem Content="2.1 Hjemløshed" />
+                <ComboBoxItem Content="2.2 Indadreagerende adfærd" />
+                <ComboBoxItem Content="2.3.1 Ikke-personfarlig kriminalitet" />
+                <ComboBoxItem Content="2.3.2 Personfarlig kriminalitet" />
+                <ComboBoxItem Content="2.4 Selvmordsforsøg eller selvmordstanker" />
+                <ComboBoxItem Content="2.5.1 Alkoholmisbrug" />
+                <ComboBoxItem Content="2.5.2 Stofmisbrug" />
+                <ComboBoxItem Content="2.6 Omsorgssvigt" />
+                <ComboBoxItem Content="2.7.1 Seksuelt overgreb" />
+                <ComboBoxItem Content="2.7.2 Voldeligt overgreb" />
+                <ComboBoxItem Content="2.8 Prostitution" />
+                <ComboBoxItem Content="2.9 Seksuelt krænkende adfærd" />
+                <ComboBoxItem Content="2.10 Selvskadende adfærd" />
+                <ComboBoxItem Content="2.11 Udadreagerende adfærd" />
+                <ComboBoxItem Content="2.12 Social isolation" />
+            </ComboBox>
+        <TabControl HorizontalAlignment="Left" Height="350" Margin="10,110,0,0" VerticalAlignment="Top" Width="772">
+            <TabItem Header="Fysisk funktionsnedsættelse">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Hørenedsættelse, kommunikationsnedsættelse, mobilitetsnedsættelse, synsnedsættelse, og døvblindhed.</TextBlock>
+                    <TextBox x:Name="fysiskFunktionsnedsaettelse_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Psykisk Funktionsnedsættelse">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Sindslidelse som angst, depression, forandret virkelighedsopfattelse, personlighedsforstyrrelse, spiseforstyrrelse, stressbelastning og tilknytningsforstyrrelse. Intellektuel/kognitiv forstyrrelse som demens, hjerneskade og udviklingsforstyrrelse, herunder opmærksomhedsforstyrrelse og autismespektrum.</TextBlock>
+                    <TextBox x:Name="psykiskFunktionsnedsaettelse_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Socialt Problem">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Hjemløshed, ind- og udadreagerende adfærd, kriminalitet, misbrug, omsorgssvigt, overgreb, prostitution, seksuelt krænkende adfærd, selvskadende adfærd, selvmordstanker og - forsøg og social isolation.</TextBlock>
+                    <TextBox x:Name="socialtProblem_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Praktiske opgaver i hjemmet">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Hjælp og omsorg for andre, praktiske opgaver, indkøb, madlavning, rengøring og tøjvask.</TextBlock>
+                    <TextBox x:Name="praktiskeOpgaverIHjemmet_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Egenomsorg">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Af- og påklædning, vask, kropspleje, toiletbesøg, drikke og spise.</TextBlock>
+                    <TextBox x:Name="egenomsorg_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Mobilitet">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Gang og bevægelse, ændre og opretholde kropsstilling, bære, flytte og håndtere genstande og færden med transportmidler.</TextBlock>
+                    <TextBox x:Name="mobilitet_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Kommunikation">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Forstå meddelelser, fremstille meddelelser, samtale, anvendelse af kommunikationshjælpe-midler og -teknikker og kommunikationsmiddel.</TextBlock>
+                    <TextBox x:Name="kommunikation_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Samfundsliv">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Beskæftigelse, bolig, uddannelse og privatøkonomi.</TextBlock>
+                    <TextBox x:Name="samfundsliv_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Socialt Liv">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Samspil og kontakt, relationer, sociale fællesskaber og netværk.</TextBlock>
+                    <TextBox x:Name="socialtliv_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Sundhed">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Helbredsforhold, kostvaner og livsførelse og medicinsk behandling.</TextBlock>
+                    <TextBox x:Name="sundhed_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Omgivelser">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">F.eks: Holdninger i omgivelserne og boligområde.</TextBlock>
+                    <TextBox x:Name="omgivelser_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Samlet Faglig Vurdering">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock Width="150" HorizontalAlignment="Left" TextWrapping="Wrap">Beskrivelse af den samlet faglig vurdering.</TextBlock>
+                    <TextBox x:Name="samletFagligVurderingBeskrivelse_txtbx" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="175,0,0,0"></TextBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

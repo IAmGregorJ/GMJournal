@@ -1,0 +1,8 @@
+C:\Users\grema\Dropbox\DTU\Grundlæggende Objektorienteret Programmering\GMJournalConsole\GMJournalConsole\bin\Debug\GMJournalConsole.exe.config
+C:\Users\grema\Dropbox\DTU\Grundlæggende Objektorienteret Programmering\GMJournalConsole\GMJournalConsole\bin\Debug\GMJournalConsole.exe
+C:\Users\grema\Dropbox\DTU\Grundlæggende Objektorienteret Programmering\GMJournalConsole\GMJournalConsole\bin\Debug\GMJournalConsole.pdb
+C:\Users\grema\Dropbox\DTU\Grundlæggende Objektorienteret Programmering\GMJournalConsole\GMJournalConsole\bin\Debug\MySql.Data.dll
+C:\Users\grema\Dropbox\DTU\Grundlæggende Objektorienteret Programmering\GMJournalConsole\GMJournalConsole\obj\Debug\GMJournalConsole.csprojAssemblyReference.cache
+C:\Users\grema\Dropbox\DTU\Grundlæggende Objektorienteret Programmering\GMJournalConsole\GMJournalConsole\obj\Debug\GMJournalConsole.csproj.CopyComplete
+C:\Users\grema\Dropbox\DTU\Grundlæggende Objektorienteret Programmering\GMJournalConsole\GMJournalConsole\obj\Debug\GMJournalConsole.exe
+C:\Users\grema\Dropbox\DTU\Grundlæggende Objektorienteret Programmering\GMJournalConsole\GMJournalConsole\obj\Debug\GMJournalConsole.pdb
